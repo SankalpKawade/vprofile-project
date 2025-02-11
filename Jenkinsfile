@@ -35,7 +35,10 @@ pipeline{
         }
 
         stage('Chechstyle Analysis'){
-            sh 'mvn checkstyle:checkstyle'
+            steps{
+                 sh 'mvn checkstyle:checkstyle'
+            }
+           
         }
     }
 }
