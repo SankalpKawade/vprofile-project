@@ -1,10 +1,10 @@
-pipeline{
+pipeline {
     agent any
-    tools{
+    tools {
         jdk "jdk-17"
         maven "Maven3.9"
     }
-    environment{
+    environment {
         SNAP_REPO = 'snapshot'
 		NEXUS_USER = 'admin'
 		NEXUS_PASS = 'Admin123'
@@ -15,27 +15,27 @@ pipeline{
 		NEXUS_GRP_REPO = 'vpro-maven-group'
         NEXUS_LOGIN = 'nexuslogin'
     }
-    stages{
+    stages {
         stage('Build'){
-            steps{
+            steps {
                 sh 'mvn -s settings.xml -DskipTests install'
             }
-            post{
+            post {
                 success{
                     echo "Now archiving."
-                    archiveArtificats artifacts: '**/*.war'
+                    archiveArtifacts artifacts: '**/*.war'
                 }
             }
         }
 
         stage('Test'){
-            steps{
+            steps {
                 sh 'mvn test'
             }
         }
 
         stage('Chechstyle Analysis'){
-            steps{
+            steps {
                  sh 'mvn checkstyle:checkstyle'
             }
            
