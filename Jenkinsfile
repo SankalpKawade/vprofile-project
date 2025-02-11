@@ -2,7 +2,7 @@ pipeline{
     agent any
     tools{
         jdk "jdk-17"
-        maven "MAVEN3.9"
+        maven "Maven3.9"
     }
     environment{
         SNAP_REPO = 'snapshot'
