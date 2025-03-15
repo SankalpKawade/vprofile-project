@@ -54,7 +54,7 @@ pipeline {
                 -Dsonar.projectKey=vprofile \
                 -Dsonar.projectName=vprofile \
                 -Dsonar.projectVersion=1.0 \
-                -Dsonar.sources=src/ \
+                -Dsonar.sources=src,src/main/webapp/ \
                 -Dsonar.java.binaries=target/test-classes/com/visualpathit/account/controllerTest/ \
                 -Dsonar.junit.reportsPath=target/surefire-reports/ \
                 -Dsonar.jacoco.reportsPath=target/jacoco.exec \
