@@ -29,7 +29,6 @@ pipeline {
                 }
             }
         }
-    }
     stage('UNIT TEST'){
             steps {
                 sh 'mvn -s settings.xml test'
@@ -44,6 +43,7 @@ pipeline {
                     echo 'Generated Analysis Result Hurrayy!!'
                 }
             }
+    }
     }
 
 }
