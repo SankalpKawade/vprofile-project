@@ -41,7 +41,7 @@ pipeline {
             }
             post {
                 success {
-                    echo 'Generated Analysis Result'
+                    echo 'Generated Analysis Result Hurrayy!!'
                 }
             }
     }
