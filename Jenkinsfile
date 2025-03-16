@@ -46,7 +46,7 @@ pipeline {
     }
     stage("Code Quality check with SonarQube"){
         steps{
-                environment {
+            environment {
                 scannerHome = tool "${SONARSCANNER}"
             }
             steps {
